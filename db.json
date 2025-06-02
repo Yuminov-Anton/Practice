@@ -1,29 +1,55 @@
 {
-  "posts": [
+"posts": [
     {
-      "title": "Первый пост 1",
-      "body": "Содержание первого поста",
-      "id": "1"
+      "id": 1,
+      "title": "Первый пост",
+      "body": "Описание первого поста",
+      "image": "https://picsum.photos/seed/post1/600/300"
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Второй пост",
-      "body": "Содержание второго поста"
+      "body": "Описание второго поста",
+      "image": "https://picsum.photos/seed/post2/600/300"
     },
     {
-      "id": "885d",
+      "id": 3,
+      "title": "Третий пост",
+      "body": "Описание третьего поста",
+      "image": "https://picsum.photos/seed/post3/600/300"
+    },
+    {
+      "id": 4,
       "title": "Четвёртый пост",
-      "body": "Описание поста"
+      "body": "Этот пост посвящён адаптивности интерфейса.",
+      "image": "https://picsum.photos/seed/post4/600/300"
+    },
+    {
+      "id": 5,
+      "title": "Пятый пост",
+      "body": "В этом посте обсуждается структура компонентов в Nuxt 3.",
+      "image": "https://picsum.photos/seed/post5/600/300"
+    },
+    {
+      "id": 6,
+      "title": "Шестой пост",
+      "body": "Здесь рассказывается про SEO в Nuxt с использованием useHead.",
+      "image": "https://picsum.photos/seed/post6/600/300"
     }
   ],
   "comments": [
     {
-      "id": "1",
+      "id": 1,
       "postId": 1,
       "text": "Комментарий к первому посту"
     },
     {
-      "id": "2",
+      "id": 2,
+      "postId": 1,
+      "text": "Ещё один комментарий"
+    },
+    {
+      "id": 3,
       "postId": 2,
       "text": "Комментарий ко второму посту"
     }

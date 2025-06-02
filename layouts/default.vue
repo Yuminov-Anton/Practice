@@ -1,10 +1,24 @@
 <template>
-  <div>
+  <div class="layout">
     <Header />
-    <NuxtPage />
+    <main class="layout__main">
+      <slot />
+    </main>
   </div>
 </template>
 
-<script setup>
-import Header from '~/components/Header.vue'
-</script>
+<style scoped lang="scss">
+.layout {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 100vh;
+
+  &__main {
+    flex-grow: 1;
+    flex-wrap: wrap;
+    padding: 2rem;
+    max-width: 100%;
+  }
+}
+</style>
