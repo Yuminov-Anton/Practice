@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1 class="home__title">Последние посты</h1>
+    <h1 class="home__title">Посты</h1>
     <div class="home__posts">
       <PostCard v-for="post in posts" :key="post.id" :post="post" />
     </div>
@@ -9,6 +9,12 @@
 </template>
 
 <script setup>
+useHead({
+  title: 'Главная',
+  meta: [
+    { name: 'description', content: 'Добро пожаловать на главную страницу' },
+  ]
+})
 const { data: posts } = await useAsyncData('homePosts', () =>
   $fetch('http://localhost:3000/posts?_limit=3')
 )
@@ -16,6 +22,7 @@ const { data: posts } = await useAsyncData('homePosts', () =>
 
 <style scoped lang="scss">
 .home {
+
   &__title {
     font-size: 2rem;
     font-weight: bold;
@@ -26,7 +33,8 @@ const { data: posts } = await useAsyncData('homePosts', () =>
 
   &__posts {
     display: flex;
-    gap: 1rem;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
   &__more-link {

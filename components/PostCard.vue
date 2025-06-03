@@ -24,6 +24,7 @@ defineProps(['post'])
   overflow: hidden;
   width: 450px;
   margin: 0 auto;
+  margin-bottom: 40px;
 
   &:hover {
     transform: translateY(-4px);
@@ -48,6 +49,11 @@ defineProps(['post'])
     font-size: 1rem;
     color: #666;
     margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__link {

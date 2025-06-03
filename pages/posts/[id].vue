@@ -30,7 +30,7 @@
         @cancel="showConfirm = false"
       />
 
-      <h2>Комментарии</h2>
+      <h3>Комментарии</h3>
       <div v-if="comments?.length">
         <div v-for="comment in comments" :key="comment.id" class="comment">
           {{ comment.text }}
@@ -39,6 +39,17 @@
       <div v-else>
         <em>Комментариев пока нет.</em>
       </div>
+
+      <button @click="showAddCommentModal = true" class="add-comment-btn">
+        Добавить комментарий
+      </button><br><br>
+
+      <AddCommentModal
+        v-if="showAddCommentModal"
+        :post-id="parseInt(postId)"
+        @close="showAddCommentModal = false"
+        @submitted="addLocalComment"
+      />
     </template>
     
     <template v-else>
@@ -54,6 +65,20 @@
 </template>
 
 <script setup lang="ts">
+watchEffect(() => {
+  if (post.value) {
+    useHead({
+      title: `${post.value.title} - Пост`,
+      meta: [
+        { name: 'description', content: post.value.body?.slice(0, 160) || 'Описание поста' },
+      ]
+    })
+  }
+})
+
+import AddCommentModal from '@/components/AddCommentModal.vue'
+
+const showAddCommentModal = ref(false)
 const route = useRoute()
 const router = useRouter()
 
@@ -117,6 +142,9 @@ const deletePost = async () => {
     alert('Не удалось удалить пост')
     showConfirm.value = false
   }
+}
+const addLocalComment = (newComment: { id: number; postId: number; text: string }) => {
+  comments.value.push(newComment)
 }
 </script>
 
@@ -182,5 +210,53 @@ const deletePost = async () => {
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
+}
+.comment-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comment-form textarea {
+  padding: 0.5rem;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.comment-form button {
+  align-self: flex-start;
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  opacity: 0.8;
+}
+.add-comment-btn {
+  background-color: #4caf50; /* зелёный */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-comment-btn:hover {
+  background-color: #45a049;
+}
+
+.add-comment-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 </style>

@@ -1,55 +1,55 @@
 {
-"posts": [
+  "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Первый пост",
-      "body": "Описание первого поста",
-      "image": "https://picsum.photos/seed/post1/600/300"
+      "body": "Описание первого поста\nфффффффффффффф\nффффффффффффффф\nФФФФФФФФФФФФФФФФФ\nФФФФФФФФФФФФФФФФ\nФФФФФФФФФФФФФФФФФ\nФФФФФФФФФФФФФФФФФФФ\nФФФФФФФФФФФФФФФФФФФФФ\nФФФФФФФФФФФФФФФ",
+      "image": "https://i.pinimg.com/736x/20/58/11/205811000230fa058771a9dd2a6d469f.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Второй пост",
       "body": "Описание второго поста",
-      "image": "https://picsum.photos/seed/post2/600/300"
+      "image": "https://i.pinimg.com/736x/cc/e9/22/cce92227b513f866fa0b5ef3192819c5.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Третий пост",
       "body": "Описание третьего поста",
-      "image": "https://picsum.photos/seed/post3/600/300"
+      "image": "https://i.pinimg.com/736x/bf/ae/d1/bfaed1d3a3f4167369df4a648638bec3.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Четвёртый пост",
       "body": "Этот пост посвящён адаптивности интерфейса.",
-      "image": "https://picsum.photos/seed/post4/600/300"
+      "image": "https://i.pinimg.com/736x/ac/d7/fc/acd7fc84116a13d068aa9e8e34f3b51f.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Пятый пост",
       "body": "В этом посте обсуждается структура компонентов в Nuxt 3.",
-      "image": "https://picsum.photos/seed/post5/600/300"
+      "image": "https://i.pinimg.com/736x/42/73/42/4273425d8c7209ac77c2d69148b6bfe3.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Шестой пост",
       "body": "Здесь рассказывается про SEO в Nuxt с использованием useHead.",
-      "image": "https://picsum.photos/seed/post6/600/300"
+      "image": "https://i.pinimg.com/736x/f7/49/60/f74960dc5a70ca1679d252dfc526bfca.jpg"
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "postId": 1,
       "text": "Комментарий к первому посту"
     },
     {
-      "id": 2,
+      "id": "2",
       "postId": 1,
       "text": "Ещё один комментарий"
     },
     {
-      "id": 3,
+      "id": "3",
       "postId": 2,
       "text": "Комментарий ко второму посту"
     }
